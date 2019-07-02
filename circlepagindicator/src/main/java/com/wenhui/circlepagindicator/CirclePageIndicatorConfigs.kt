@@ -1,3 +1,4 @@
+@file:JvmName("CirclePageIndicatorUtil")
 package com.wenhui.circlepagindicator
 
 import android.content.Context
@@ -57,6 +58,7 @@ private const val ANIMATION_DURATION_WITHOUT_SHIFT = 100L
 
 
 @Suppress("FunctionName")
+@JvmName("getConfigs")
 fun CirclePageIndicatorConfigs(context: Context): CirclePageIndicatorConfigs {
     return CirclePageIndicatorConfigs.Builder(context).build()
 }

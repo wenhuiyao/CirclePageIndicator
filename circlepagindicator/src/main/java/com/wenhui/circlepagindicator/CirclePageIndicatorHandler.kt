@@ -17,8 +17,10 @@ private val INDICATOR_POOL = Pools.SimplePool<PageIndicatorSpecs>(10)
 /**
  * Calculating indicators position, and animate shift and scale if needed
  */
-internal class CirclePageIndicatorHandler(private val parentView: View,
-                                          private val configs: CirclePageIndicatorConfigs) {
+internal class CirclePageIndicatorHandler(
+    private val parentView: View,
+    private val configs: CirclePageIndicatorConfigs
+) {
 
     private val itemSpace = configs.indicatorSpacing
     private val animationInterpolator = LinearOutSlowInInterpolator()
@@ -324,7 +326,8 @@ internal class CirclePageIndicatorHandler(private val parentView: View,
             })
 
             interpolator = animationInterpolator
-            startDelay = if (shouldAnimateShift) configs.animationStartDelayed else configs.animationStartDelayedWithoutShift
+            startDelay =
+                if (shouldAnimateShift) configs.animationStartDelayed else configs.animationStartDelayedWithoutShift
             duration = if (shouldAnimateShift) configs.animationDuration else configs.animationDurationWithoutShift
             start()
         }

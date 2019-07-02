@@ -10,16 +10,8 @@ import android.view.View
  */
 class CirclePageIndicator<V : View> @JvmOverloads constructor(
     private val parentView: V,
-    private val pager: Pager<V>,
     private val configs: CirclePageIndicatorConfigs = CirclePageIndicatorConfigs(parentView.context)
 ) {
-
-    interface Pager<V : View> {
-        /**
-         * @return The position of the selected page, otherwise return negative number if no page found
-         */
-        fun findSelectedPagePosition(parentView: V): Int
-    }
 
     private val indicatorHandler = CirclePageIndicatorHandler(parentView, configs)
     private val indicatorRenderer = CirclePagerIndicatorRenderer(configs.activeColor, configs.inactiveColor)
@@ -27,22 +19,20 @@ class CirclePageIndicator<V : View> @JvmOverloads constructor(
     /**
      * Call when adapter data updated
      */
-    fun onDataUpdated(totalItemCount: Int) {
+    fun onDataUpdated(totalItemCount: Int, selectedPosition: Int) {
         indicatorHandler.onItemsUpdated(totalItemCount)
-        onPageSelected()
+        onPageSelected(selectedPosition)
     }
 
     /**
      * Call when page is selected, or scrolling, so the new active position will be highlighted appropriately
      */
-    fun onPageSelected() {
+    fun onPageSelected(selectedPosition: Int) {
         if (indicatorHandler.shouldShowIndicators.not()) return
         updateBounds()
 
-        val newPosition = pager.findSelectedPagePosition(parentView)
-        if (newPosition >= 0) {
-            indicatorHandler.showActivePosition(newPosition)
-        }
+        val position = Math.max(selectedPosition, 0)
+        indicatorHandler.showActivePosition(position)
     }
 
     /**
