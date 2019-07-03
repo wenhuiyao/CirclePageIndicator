@@ -12,7 +12,7 @@ import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import java.util.*
 
 private val INDICATOR_POOL = Pools.SimplePool<PageIndicatorSpecs>(10)
-
+private val ZERO_BOUNDS_RECT = Rect()
 
 /**
  * Calculating indicators position, and animate shift and scale if needed
@@ -31,6 +31,9 @@ internal class CirclePageIndicatorHandler(
   private val minNumOfIndicators = Math.min(configs.edgeVisibleIndicators, (configs.maxVisibleIndicators + 1) / 2)
 
   var bounds: Rect = ZERO_BOUNDS_RECT
+
+  val isBoundsSet: Boolean
+    get() = bounds !== ZERO_BOUNDS_RECT
 
   private var totalItemCount = 0
   private var runningAnimation: Animator? = null

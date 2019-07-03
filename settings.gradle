@@ -1,1 +1,1 @@
-include ':app', ':circlepagindicator', ':recyclerview'
+include ':circlepagindicator', ':recyclerview', ':example'

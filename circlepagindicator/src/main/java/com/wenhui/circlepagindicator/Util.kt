@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Rect
 import android.util.TypedValue
 
-internal val ZERO_BOUNDS_RECT = Rect()
 
 internal fun Float.toDp(context: Context): Float {
   return TypedValue.applyDimension(

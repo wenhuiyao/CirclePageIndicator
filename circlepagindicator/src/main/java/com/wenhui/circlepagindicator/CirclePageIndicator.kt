@@ -37,11 +37,9 @@ class CirclePageIndicator<V : View> @JvmOverloads constructor(
 
   /**
    * Update indicator background and drawing bounds
-   *
-   * @return True if bounds updated, false if not
    */
-  private fun updateBounds(): Boolean {
-    if (indicatorHandler.bounds !== ZERO_BOUNDS_RECT) return false
+  private fun updateBounds() {
+    if (indicatorHandler.isBoundsSet) return
 
     if (parentView.width > 0 && parentView.height > 0) {
       val left = 0
@@ -53,17 +51,8 @@ class CirclePageIndicator<V : View> @JvmOverloads constructor(
       val indicatorBottom = parentView.height - configs.indicatorBottomMargin
       val indicatorDrawingBoundHeight = (configs.largeIndicatorRadius + 4f).toInt()
       val indicatorTop = indicatorBottom - indicatorDrawingBoundHeight
-      indicatorHandler.bounds = Rect().also {
-        it.left = left
-        it.top = indicatorTop
-        it.right = right
-        it.bottom = indicatorBottom
-      }
-
-      return true
+      indicatorHandler.bounds = Rect(left, indicatorTop, right, indicatorBottom)
     }
-
-    return false
   }
 
   fun draw(canvas: Canvas) {

@@ -2,12 +2,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 28
-
+    compileSdkVersion Versions.compile_sdk
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
         versionCode 1
         versionName "1.0"
 
@@ -25,10 +24,11 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation Deps.kotlin_stdlib
     api project(':circlepagindicator')
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+
+    implementation Deps.recyclerview
+    implementation Deps.app_compat
 
     testImplementation 'junit:junit:4.12'
 }

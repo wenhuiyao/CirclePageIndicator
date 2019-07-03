@@ -1,0 +1,1 @@
+/Users/wenhuiyao/workspace/CirclePageIndicator/buildSrc/build/classes/kotlin/main/Deps.class:/Users/wenhuiyao/workspace/CirclePageIndicator/buildSrc/build/classes/kotlin/main/Versions.class
