@@ -8,8 +8,8 @@ import android.view.View
 /**
  * A horizontal pager indicators can be drew on top of RecyclerView.
  */
-class CirclePageIndicator<V : View> @JvmOverloads constructor(
-  private val parentView: V,
+class CirclePageIndicator @JvmOverloads constructor(
+  private val parentView: View,
   private val configs: CirclePageIndicatorConfigs = CirclePageIndicatorConfigs(parentView.context)
 ) {
 

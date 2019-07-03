@@ -30,8 +30,10 @@ dependencies {
     implementation Deps.core_ktx
     implementation Deps.constraint_layout
     implementation Deps.recyclerview
+    implementation Deps.view_pager2
 
     implementation project(':recyclerview')
+    implementation project(':viewpager2')
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

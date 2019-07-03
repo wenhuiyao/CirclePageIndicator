@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion Versions.compile_sdk
+
+    defaultConfig {
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
+        versionCode Versions.version_code
+        versionName Versions.version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation Deps.kotlin_stdlib
+    api project(':circlepagindicator')
+
+    implementation Deps.recyclerview
+    implementation Deps.app_compat
+    implementation Deps.view_pager2
+
+    testImplementation 'junit:junit:4.12'
+}

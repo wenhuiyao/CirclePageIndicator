@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.wenhui.recyclerview.RecyclerViewPageIndicator
+import com.wenhui.circlepageindicator.recyclerview.RecyclerViewPageIndicator
 import kotlinx.android.synthetic.main.example_item.view.*
 import kotlinx.android.synthetic.main.fragment_recyclerview_page_indicator.view.*
 

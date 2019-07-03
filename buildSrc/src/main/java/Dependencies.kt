@@ -1,6 +1,6 @@
 object Versions {
   val kotlin = "1.3.40"
-  val min_sdk = 16
+  val min_sdk = 19
   val target_sdk = 28
   val compile_sdk = 28
   val version_code = 1
@@ -11,6 +11,7 @@ object Versions {
   val constraint_layout="1.1.3"
   val material="1.0.0"
   val recyclerview="1.0.0"
+  val viewPager2="1.0.0-alpha06"
 }
 
 object Deps {
@@ -22,4 +23,5 @@ object Deps {
   val constraint_layout = "androidx.constraintlayout:constraintlayout:${Versions.constraint_layout}"
   val material = "com.google.android.material:material:${Versions.material}"
   val recyclerview = "com.android.support:recyclerview-v7:${Versions.recyclerview}"
+  val view_pager2 = "androidx.viewpager2:viewpager2:${Versions.viewPager2}"
 }

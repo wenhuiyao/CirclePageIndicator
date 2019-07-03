@@ -1,4 +1,4 @@
-package com.wenhui.recyclerview
+package com.wenhui.circlepageindicator.recyclerview
 
 import android.graphics.Canvas
 import androidx.recyclerview.widget.RecyclerView
@@ -40,7 +40,7 @@ class RecyclerViewPageIndicator {
 
   private fun tryRegisterAdapter(
     recyclerView: RecyclerView,
-    pageIndicator: CirclePageIndicator<RecyclerView>
+    pageIndicator: CirclePageIndicator
   ): Boolean {
     val adapter = recyclerView.adapter
     if (adapter == null) {

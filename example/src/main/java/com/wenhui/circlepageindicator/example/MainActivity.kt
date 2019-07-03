@@ -30,7 +30,8 @@ private data class Data(val title: String,
                         val clazzName: String)
 
 private val dataset = arrayOf(
-  Data("RecyclerView Pager Indicator", RecyclerViewPageIndicatorFragment::class.java.name)
+  Data("RecyclerView Page Indicator", RecyclerViewPageIndicatorFragment::class.java.name),
+  Data("ViewPager Page Indicator", ViewPagerPageIndicatorFragment::class.java.name)
 )
 
 private class SampleAdapter(private val context: AppCompatActivity): RecyclerView.Adapter<SampleViewHolder>() {
