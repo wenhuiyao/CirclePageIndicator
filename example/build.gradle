@@ -9,8 +9,8 @@ android {
         applicationId "com.wenhui.circlepageindicator.example"
         minSdkVersion Versions.min_sdk
         targetSdkVersion Versions.target_sdk
-        versionCode 1
-        versionName "1.0"
+        versionCode Versions.version_code
+        versionName Versions.version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -30,6 +30,8 @@ dependencies {
     implementation Deps.core_ktx
     implementation Deps.constraint_layout
     implementation Deps.recyclerview
+
+    implementation project(':recyclerview')
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

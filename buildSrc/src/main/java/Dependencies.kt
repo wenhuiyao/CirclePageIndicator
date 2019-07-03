@@ -4,7 +4,7 @@ object Versions {
   val target_sdk = 28
   val compile_sdk = 28
   val version_code = 1
-  val version_name = "1.0"
+  val version_name = "0.5"
   val android_gradle_plugin = "3.4.1"
   val app_compat="1.0.2"
   val core_ktx="1.0.2"

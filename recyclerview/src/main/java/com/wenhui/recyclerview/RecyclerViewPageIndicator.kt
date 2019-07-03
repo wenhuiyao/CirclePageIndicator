@@ -50,12 +50,17 @@ class RecyclerViewPageIndicator {
       return false
     }
 
+    fun onDataUpdated() {
+      val position = findSelectedPagePosition(recyclerView)
+      pageIndicator.onDataUpdated(adapter.itemCount, position)
+    }
+
     if (adapter !== this.adapter) {
       unregisterDataObserver()
+      onDataUpdated()
       val dataObserver = object : RecyclerView.AdapterDataObserver() {
         override fun onChanged() {
-          val selectedPosition = findSelectedPagePosition(recyclerView)
-          pageIndicator.onDataUpdated(adapter.itemCount, selectedPosition)
+          onDataUpdated()
         }
       }
       adapter.registerAdapterDataObserver(dataObserver)
